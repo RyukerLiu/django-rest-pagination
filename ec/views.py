@@ -13,4 +13,14 @@ class OrderViewSet(viewsets.ModelViewSet):
 
 @api_view(["GET"])
 def hello(request):
-    return Response({"message": "hello"})
+    return Response(
+        {
+            "message": "hello",
+            "versions": [
+                {"id": 1, "text": "hello"},
+                {"id": 2, "text": "hi"},
+                {"id": 3, "text": "bonjour"},
+                {"id": 4, "text": "hola"},
+            ],
+        }
+    )
